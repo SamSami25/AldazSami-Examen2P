@@ -3,6 +3,16 @@
 
 #include <QMainWindow>
 #include <QDebug>
+#include <QImage>
+#include <QPainter>
+#include <QMouseEvent>
+#include <QPaintEvent>
+#include <QDebug>
+#include <QInputDialog>
+#include <QColorDialog>
+#include <QFileDialog>
+#include <QMessageBox>
+
 #include "configuracion.h"
 #include "circulo.h"
 

@@ -48,7 +48,7 @@ void Juego::mouseMoveEvent(QMouseEvent *event)
     ypos = event->pos();
     QPen pincel;
     pincel.setColor(Qt::black);
-    pincel.setWidth(20);
+    pincel.setWidth(50);
    // mPainter->setPen(pincel);
     mPainter->drawEllipse(xpos.x(),xpos.y(),ypos.x()-xpos.x(),ypos.y()-xpos.y());
     update();
