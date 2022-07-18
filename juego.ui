@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>518</width>
-    <height>591</height>
+    <height>616</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -29,6 +29,22 @@
       <property name="frameShadow">
        <enum>QFrame::Raised</enum>
       </property>
+      <widget class="QWidget" name="widget_3" native="true">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>500</width>
+         <height>400</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>500</width>
+         <height>400</height>
+        </size>
+       </property>
+      </widget>
      </widget>
     </item>
     <item>
@@ -111,7 +127,7 @@
      <x>0</x>
      <y>0</y>
      <width>518</width>
-     <height>22</height>
+     <height>27</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuArchivo">
@@ -126,16 +142,26 @@
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <action name="actionConfigraci0n">
+   <property name="icon">
+    <iconset resource="Recursos.qrc">
+     <normaloff>:/new/prefix1/Recursos/img/ajuste.png</normaloff>:/new/prefix1/Recursos/img/ajuste.png</iconset>
+   </property>
    <property name="text">
     <string>Configración</string>
    </property>
   </action>
   <action name="actionSalir">
+   <property name="icon">
+    <iconset resource="Recursos.qrc">
+     <normaloff>:/new/prefix1/Recursos/img/salida (1).png</normaloff>:/new/prefix1/Recursos/img/salida (1).png</iconset>
+   </property>
    <property name="text">
     <string>Salir</string>
    </property>
   </action>
  </widget>
- <resources/>
+ <resources>
+  <include location="Recursos.qrc"/>
+ </resources>
  <connections/>
 </ui>

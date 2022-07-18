@@ -17,7 +17,9 @@ Configuracion::~Configuracion()
 
 void Configuracion::on_btnColor_released()
 {
-
+    m_color = QColorDialog::getColor(m_color,
+                                    this,
+                                    "Color del Pincel");
 }
 
 void Configuracion::setColor(const QColor &newColor)
@@ -49,3 +51,8 @@ int Configuracion::dimension() const
     return m_dimension;
 }
 
+
+void Configuracion::on_inDimension_actionTriggered(int action)
+{
+
+}

@@ -10,11 +10,55 @@ Juego::Juego(QWidget *parent)
     m_circulo = new Circulo();
     m_circulo->setX(centro.x());
     m_circulo->setY(centro.y());
+    mImagen = new QImage(this->size(),QImage::Format_ARGB32_Premultiplied);
+    mImagen->fill(Qt::white);
+    mPainter = new QPainter(mImagen);
+    mPainter->setRenderHint(QPainter::Antialiasing);
+    mPuedeDibujar = false;
+    mNumeroLineas = 0;
 }
 
 Juego::~Juego()
 {
     delete ui;
+    delete mPainter;
+    delete mImagen;
+}
+
+void Juego::paintEvent(QPaintEvent *event)
+{
+    QPainter painter(this);
+    painter.drawImage(0, 0, *mImagen);
+    event->accept();
+}
+
+void Juego::mousePressEvent(QMouseEvent *event)
+{
+    mPuedeDibujar = true;
+    xpos = event->pos();
+    event->accept();
+}
+
+void Juego::mouseMoveEvent(QMouseEvent *event)
+{
+    if ( !mPuedeDibujar ) {
+        event->accept();
+        return;
+    }
+    ypos = event->pos();
+    QPen pincel;
+    pincel.setColor(Qt::black);
+    pincel.setWidth(20);
+   // mPainter->setPen(pincel);
+    mPainter->drawEllipse(xpos.x(),xpos.y(),ypos.x()-xpos.x(),ypos.y()-xpos.y());
+    update();
+    xpos = ypos;
+}
+
+void Juego::mouseReleaseEvent(QMouseEvent *event)
+{
+    mPuedeDibujar = false;
+    event->accept();
 }
 
 
@@ -56,5 +100,16 @@ void Juego::on_actionConfigraci0n_triggered()
 void Juego::on_actionSalir_triggered()
 {
     this->close();
+}
+
+void Juego::dibujar()
+{
+    QPen pincel;
+    pincel.setWidth(5);
+    pincel.setColor(Qt::black);
+
+    mPainter->setPen(pincel);
+    mPainter->drawEllipse(xpos.x(),xpos.y(),ypos.x()- xpos.x(),ypos.y()-xpos.y());
+    update();
 }
 
