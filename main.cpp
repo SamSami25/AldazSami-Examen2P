@@ -9,3 +9,9 @@ int main(int argc, char *argv[])
     w.show();
     return a.exec();
 }
+
+/* UNIVERSIDAD POLITÉCNICA SALESIANA
+ *  Nombre: Sami Gabriela Aldaz Cabrera
+ * Cédula: 1756136170
+ * Asignatura: Programación Orientada a Objetos
+*/
